@@ -318,6 +318,13 @@ class CacheService {
 
     async subscribe(pattern, callback) {
         try {
+            if (typeof callback !== "function") {
+                throw new Error("Callback must be a function");
+            }
+
+            
+            // Remove existing listeners to prevent duplicates
+            this.subscriber.removeAllListeners('pmessage');
             await this.subscriber.psubscribe(pattern);
             this.subscriber.on('pmessage', (pattern, channel, message) => {
                 try {
