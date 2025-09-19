@@ -2,3 +2,18 @@
 {"level":"info","message":"Database connected","timestamp":"2025-09-19T07:33:14.161Z"}
 {"level":"info","message":"All services initialized successfully","timestamp":"2025-09-19T07:33:14.161Z"}
 {"level":"info","message":"Server running on port 5000","timestamp":"2025-09-19T07:33:14.163Z"}
+{"level":"info","message":"Initializing services...","timestamp":"2025-09-19T10:24:40.038Z"}
+{"level":"info","message":"Database connected","timestamp":"2025-09-19T10:24:40.082Z"}
+{"level":"info","message":"Creating 8 mediasoup workers","timestamp":"2025-09-19T10:24:40.083Z"}
+{"level":"info","message":"Mediasoup initialized with 8 workers","timestamp":"2025-09-19T10:24:40.218Z"}
+{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"level":"error","message":"RabbitMq connection error connect ECONNREFUSED 127.0.0.1:5672","port":5672,"stack":"Error: connect ECONNREFUSED 127.0.0.1:5672\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)","syscall":"connect","timestamp":"2025-09-19T10:24:40.223Z"}
+{"level":"info","message":"Attempting RabbitMQ reconnection 1/10","timestamp":"2025-09-19T10:24:40.223Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-19T10:24:40.228Z"}
+{"level":"info","message":"Redis client ready","timestamp":"2025-09-19T10:24:40.231Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2025-09-19T10:24:40.231Z"}
+{"level":"info","message":"All services initialized successfully","timestamp":"2025-09-19T10:24:40.232Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-09-19T10:24:40.233Z"}
+{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"level":"error","message":"RabbitMq connection error connect ECONNREFUSED 127.0.0.1:5672","port":5672,"stack":"Error: connect ECONNREFUSED 127.0.0.1:5672\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)","syscall":"connect","timestamp":"2025-09-19T10:24:45.227Z"}
+{"level":"info","message":"Attempting RabbitMQ reconnection 2/10","timestamp":"2025-09-19T10:24:45.229Z"}
+{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"level":"error","message":"RabbitMq connection error connect ECONNREFUSED 127.0.0.1:5672","port":5672,"stack":"Error: connect ECONNREFUSED 127.0.0.1:5672\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)","syscall":"connect","timestamp":"2025-09-19T10:24:55.233Z"}
+{"level":"info","message":"Attempting RabbitMQ reconnection 3/10","timestamp":"2025-09-19T10:24:55.234Z"}

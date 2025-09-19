@@ -150,7 +150,7 @@ module.exports = (logger) => {
         }
     })
 
-    router.get('/me', AuthMiddleware.authenticate, async (req, res) => {
+    router.get('/me', AuthMiddleWare.authenticate, async (req, res) => {
         try {
             const user = await User.findById(req.userId);
             if (!user) {
