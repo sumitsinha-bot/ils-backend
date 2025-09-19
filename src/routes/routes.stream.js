@@ -1,9 +1,6 @@
 const express = require('express');
 const { body, param, query, validationResult } = require('express-validator');
 const rateLimit = require('express-rate-limit');
-const express = require('express');
-const { body, param, query, validationResult } = require('express-validator');
-const rateLimit = require('express-rate-limit');
 
 module.exports = (streamService, logger) => {
   const router = express.Router();
