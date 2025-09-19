@@ -4,13 +4,13 @@ const { User } = require('../models');
 class AuthMiddleWare {
     static async authenticate(req, res, next) {
         try {
-            const authHeader = req.headers('authorization');
+            const authHeader = req.headers.authorization;
 
             if (!authHeader) {
                 return res.status(401).json({ message: 'Access denied, No token provided.' });
             }
 
-            const token = authHeader.replace('Bearer', '');
+            const token = authHeader.replace('Bearer ', '');
 
             if (!token) {
                 return res.status(401).json({ message: 'Access denied, Invalid token format.' });
@@ -22,11 +22,11 @@ class AuthMiddleWare {
                 const user = await User.findById(decoded.userId);
 
                 if (!user || !user.isActive) {
-                    res.status(401).json({ message: 'User not found or inactive.' });
+                    return res.status(401).json({ message: 'User not found or inactive.' });
                 }
 
                 if (decoded.exp * 1000 < Date.now()) {
-                    res.status(401).json({ message: 'Token expired.' });
+                    return res.status(401).json({ message: 'Token expired.' });
                 }
 
                 req.userId = decoded.userId;
@@ -50,7 +50,7 @@ class AuthMiddleWare {
             }
         } catch (error) {
             console.error('Authentication error:', error);
-            res.status(500).json({ error: 'Authentication service error.' });
+            return res.status(500).json({ error: 'Authentication service error.' });
         }
     }
 

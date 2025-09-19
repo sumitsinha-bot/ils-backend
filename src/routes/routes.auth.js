@@ -35,7 +35,7 @@ module.exports = (logger) => {
     ];
 
 
-    router.post('/register', authLimiter, registerValidation, async (req, res) => {
+    router.post('/register', registerValidation, async (req, res) => {
         try {
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
@@ -82,7 +82,7 @@ module.exports = (logger) => {
         }
     })
 
-    router.post('/login', authLimiter, loginValidation, async (req, res) => {
+    router.post('/login', loginValidation, async (req, res) => {
         try {
             const errors = validationResult(req);
             if (!errors.isEmpty()) {

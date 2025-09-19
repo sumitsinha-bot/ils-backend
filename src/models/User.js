@@ -110,10 +110,19 @@ userSchema.index({ createdAt: -1 });
 userSchema.index({ 'stats.totalViews': -1 });
 userSchema.index({ role: 1 });
 
-userSchema.pre('save', function (next) {
+userSchema.pre('save', async function (next) {
     this.updatedAt = new Date();
-    next();
-})
+    
+    if (!this.isModified('password')) return next();
+    
+    try {
+        const salt = await bcrypt.genSalt(12);
+        this.password = await bcrypt.hash(this.password, salt);
+        next();
+    } catch (error) {
+        next(error);
+    }
+});
 
 userSchema.methods.comparePassword = async function (candidatePassword) {
     return bcrypt.compare(candidatePassword, this.password)

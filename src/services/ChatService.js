@@ -301,6 +301,41 @@ class ChatService {
       };
     }
   }
+
+  async isMessageOwner(messageId, userId) {
+    try {
+      const message = await ChatMessage.findOne({ id: messageId });
+      return message && message.userId === userId;
+    } catch (error) {
+      this.logger.error('Error checking message ownership:', error);
+      return false;
+    }
+  }
+
+  async flagMessage(messageId, userId, reason, details = '') {
+    try {
+      const message = await ChatMessage.findOne({ id: messageId });
+      if (!message) {
+        throw new Error('Message not found');
+      }
+
+      const flag = {
+        id: uuidv4(),
+        messageId,
+        flaggedBy: userId,
+        reason,
+        details,
+        timestamp: new Date().toISOString()
+      };
+
+      await this.messageQueue.publishAnalyticsEvent('chat.message.flagged', flag);
+      this.logger.info(`Message flagged: ${messageId} by user ${userId}`);
+      return flag;
+    } catch (error) {
+      this.logger.error('Error flagging message:', error);
+      throw error;
+    }
+  }
 }
 
 module.exports = ChatService;

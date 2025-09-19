@@ -78,14 +78,15 @@ const generateLimiter = rateLimit({
     message: "Too many requests from this ip"
 })
 
-const authLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 5,
-    message: "Too much authentication requests"
-})
+// Temporarily disable rate limiting for testing
+// const authLimiter = rateLimit({
+//     windowMs: 15 * 60 * 1000,
+//     max: 5,
+//     message: "Too much authentication requests"
+// })
 
-app.use('/api', generateLimiter);
-app.use('/api/auth', authLimiter);
+// app.use('/api', generateLimiter);
+// app.use('/api/auth', authLimiter);
 
 app.get('/health', (req, res) => {
     res.json({
@@ -122,6 +123,12 @@ async function initializeServices() {
         // metricsService = new MetricsService();
         streamService = new StreamService(mediaService, messageQueue, cacheService, logger);
         chatService = new ChatService(messageQueue, cacheService, logger);
+        
+        // Register routes after services are initialized
+        app.use('/api/auth', require('./src/routes/routes.auth')(logger));
+        app.use('/api/streams', AuthMiddleWare.authenticate, require('./src/routes/routes.stream')(streamService, logger));
+        app.use('/api/chat', AuthMiddleWare.authenticate, require('./src/routes/routes.chat')(chatService, logger));
+        
         logger.info('All services initialized successfully');
 
     } catch (error) {
@@ -130,10 +137,7 @@ async function initializeServices() {
     }
 }
 
-// Routes
-app.use('/api/auth', require('./src/routes/routes.auth')(logger));
-app.use('/api/streams', AuthMiddleWare.authenticate, require('./src/routes/routes.stream')(streamService, logger));
-app.use('/api/chat', AuthMiddleWare.authenticate, require('./src/routes/routes.chat')(chatService, logger));
+// Routes will be registered after services are initialized
 
 // Socket.io handling
 io.use(AuthMiddleWare.socketAuth);

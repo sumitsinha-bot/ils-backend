@@ -206,3 +206,115 @@
 {"level":"info","message":"Attempting RabbitMQ reconnection 1/10","timestamp":"2025-09-19T12:36:41.453Z"}
 {"level":"info","message":"RabbitMQ connection closed","timestamp":"2025-09-19T12:36:41.453Z"}
 {"level":"info","message":"Redis disconnected","timestamp":"2025-09-19T12:36:41.454Z"}
+{"level":"info","message":"Initializing services...","timestamp":"2025-09-19T12:44:12.022Z"}
+{"level":"info","message":"Database connected","timestamp":"2025-09-19T12:44:12.054Z"}
+{"level":"info","message":"Creating 8 mediasoup workers","timestamp":"2025-09-19T12:44:12.055Z"}
+{"level":"info","message":"Mediasoup initialized with 8 workers","timestamp":"2025-09-19T12:44:12.171Z"}
+{"level":"info","message":"RabbitMQ connected","timestamp":"2025-09-19T12:44:12.225Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-19T12:44:12.229Z"}
+{"level":"info","message":"Redis client ready","timestamp":"2025-09-19T12:44:12.232Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2025-09-19T12:44:12.233Z"}
+{"level":"info","message":"All services initialized successfully","timestamp":"2025-09-19T12:44:12.234Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-19T12:44:12.235Z"}
+{"level":"info","message":"User testuser registered successfully","timestamp":"2025-09-19T12:44:34.376Z"}
+{"level":"info","message":"Initializing services...","timestamp":"2025-09-19T12:47:41.478Z"}
+{"level":"info","message":"Database connected","timestamp":"2025-09-19T12:47:41.513Z"}
+{"level":"info","message":"Creating 8 mediasoup workers","timestamp":"2025-09-19T12:47:41.514Z"}
+{"level":"info","message":"Mediasoup initialized with 8 workers","timestamp":"2025-09-19T12:47:41.625Z"}
+{"level":"info","message":"RabbitMQ connected","timestamp":"2025-09-19T12:47:41.681Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-19T12:47:41.684Z"}
+{"level":"info","message":"Redis client ready","timestamp":"2025-09-19T12:47:41.686Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2025-09-19T12:47:41.688Z"}
+{"level":"info","message":"All services initialized successfully","timestamp":"2025-09-19T12:47:41.688Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-19T12:47:41.689Z"}
+{"level":"info","message":"User testuser1758286069138 registered successfully","timestamp":"2025-09-19T12:47:49.359Z"}
+{"level":"info","message":"User testuser1758286081375 registered successfully","timestamp":"2025-09-19T12:48:01.579Z"}
+{"level":"info","message":"User testuser1758286101893 registered successfully","timestamp":"2025-09-19T12:48:22.099Z"}
+{"level":"info","message":"User testuser1758286101893 logged in successfully","timestamp":"2025-09-19T12:48:22.311Z"}
+{"level":"info","message":"User testuser1758286139598 registered successfully","timestamp":"2025-09-19T12:48:59.800Z"}
+{"level":"info","message":"User testuser1758286139598 logged in successfully","timestamp":"2025-09-19T12:49:00.007Z"}
+{"level":"info","message":"Initializing services...","timestamp":"2025-09-19T12:49:24.139Z"}
+{"level":"info","message":"Database connected","timestamp":"2025-09-19T12:49:24.173Z"}
+{"level":"info","message":"Creating 8 mediasoup workers","timestamp":"2025-09-19T12:49:24.174Z"}
+{"level":"info","message":"Mediasoup initialized with 8 workers","timestamp":"2025-09-19T12:49:24.279Z"}
+{"level":"info","message":"RabbitMQ connected","timestamp":"2025-09-19T12:49:24.335Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-19T12:49:24.338Z"}
+{"level":"info","message":"Redis client ready","timestamp":"2025-09-19T12:49:24.340Z"}
+{"level":"info","message":"User testuser1758286172408 registered successfully","timestamp":"2025-09-19T12:49:32.609Z"}
+{"level":"info","message":"User testuser1758286172408 logged in successfully","timestamp":"2025-09-19T12:49:32.813Z"}
+{"level":"info","message":"User testuser1758286187479 registered successfully","timestamp":"2025-09-19T12:49:47.697Z"}
+{"level":"info","message":"Initializing services...","timestamp":"2025-09-19T12:50:04.991Z"}
+{"level":"info","message":"Database connected","timestamp":"2025-09-19T12:50:05.026Z"}
+{"level":"info","message":"Creating 8 mediasoup workers","timestamp":"2025-09-19T12:50:05.028Z"}
+{"level":"info","message":"Mediasoup initialized with 8 workers","timestamp":"2025-09-19T12:50:05.131Z"}
+{"level":"info","message":"RabbitMQ connected","timestamp":"2025-09-19T12:50:05.187Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-19T12:50:05.191Z"}
+{"level":"info","message":"Redis client ready","timestamp":"2025-09-19T12:50:05.193Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2025-09-19T12:50:05.194Z"}
+{"level":"info","message":"All services initialized successfully","timestamp":"2025-09-19T12:50:05.195Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-19T12:50:05.196Z"}
+{"level":"info","message":"User testuser1758286214719 registered successfully","timestamp":"2025-09-19T12:50:14.959Z"}
+{"level":"info","message":"User testuser1758286221321 registered successfully","timestamp":"2025-09-19T12:50:21.524Z"}
+{"level":"info","message":"User testuser1758286221321 logged in successfully","timestamp":"2025-09-19T12:50:21.732Z"}
+{"level":"error","message":"Get streams error: Cannot read properties of undefined (reading 'getActiveStreams')","stack":"TypeError: Cannot read properties of undefined (reading 'getActiveStreams')\n    at /home/pps024/Desktop/ils/backend/src/routes/routes.stream.js:112:39\n    at Layer.handle [as handle_request] (/home/pps024/Desktop/ils/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/pps024/Desktop/ils/backend/node_modules/express/lib/router/route.js:149:13)\n    at middleware (/home/pps024/Desktop/ils/backend/node_modules/express-validator/lib/middlewares/check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2025-09-19T12:50:21.749Z"}
+{"level":"info","message":"User testuser1758286278587 registered successfully","timestamp":"2025-09-19T12:51:18.786Z"}
+{"level":"info","message":"User testuser1758286278587 logged in successfully","timestamp":"2025-09-19T12:51:18.992Z"}
+{"level":"error","message":"Get streams error: Cannot read properties of undefined (reading 'getActiveStreams')","stack":"TypeError: Cannot read properties of undefined (reading 'getActiveStreams')\n    at /home/pps024/Desktop/ils/backend/src/routes/routes.stream.js:112:39\n    at Layer.handle [as handle_request] (/home/pps024/Desktop/ils/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/pps024/Desktop/ils/backend/node_modules/express/lib/router/route.js:149:13)\n    at middleware (/home/pps024/Desktop/ils/backend/node_modules/express-validator/lib/middlewares/check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2025-09-19T12:51:19.007Z"}
+{"level":"info","message":"Initializing services...","timestamp":"2025-09-19T12:51:58.174Z"}
+{"level":"info","message":"Database connected","timestamp":"2025-09-19T12:51:58.207Z"}
+{"level":"info","message":"Creating 8 mediasoup workers","timestamp":"2025-09-19T12:51:58.211Z"}
+{"level":"info","message":"Mediasoup initialized with 8 workers","timestamp":"2025-09-19T12:51:58.310Z"}
+{"level":"info","message":"RabbitMQ connected","timestamp":"2025-09-19T12:51:58.363Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-19T12:51:58.367Z"}
+{"level":"info","message":"Redis client ready","timestamp":"2025-09-19T12:51:58.369Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2025-09-19T12:51:58.370Z"}
+{"level":"info","message":"All services initialized successfully","timestamp":"2025-09-19T12:51:58.413Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-19T12:51:58.414Z"}
+{"level":"info","message":"Initializing services...","timestamp":"2025-09-19T12:53:04.048Z"}
+{"level":"info","message":"Database connected","timestamp":"2025-09-19T12:53:04.081Z"}
+{"level":"info","message":"Creating 8 mediasoup workers","timestamp":"2025-09-19T12:53:04.082Z"}
+{"level":"info","message":"Mediasoup initialized with 8 workers","timestamp":"2025-09-19T12:53:04.183Z"}
+{"level":"info","message":"RabbitMQ connected","timestamp":"2025-09-19T12:53:04.236Z"}
+{"level":"info","message":"Redis client connected","timestamp":"2025-09-19T12:53:04.240Z"}
+{"level":"info","message":"Redis client ready","timestamp":"2025-09-19T12:53:04.243Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2025-09-19T12:53:04.244Z"}
+{"level":"info","message":"All services initialized successfully","timestamp":"2025-09-19T12:53:04.288Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-19T12:53:04.289Z"}
+{"level":"info","message":"User testuser1758286394694 registered successfully","timestamp":"2025-09-19T12:53:14.919Z"}
+{"level":"info","message":"User testuser1758286394694 logged in successfully","timestamp":"2025-09-19T12:53:15.126Z"}
+{"level":"info","message":"User testuser1758286420208 registered successfully","timestamp":"2025-09-19T12:53:40.425Z"}
+{"level":"info","message":"User testuser1758286420208 logged in successfully","timestamp":"2025-09-19T12:53:40.635Z"}
+{"level":"info","message":"Room created: 4129bca5-2129-4b64-9bf1-cb7753e75e59 on worker 0","timestamp":"2025-09-19T12:53:40.659Z"}
+{"level":"info","message":"Stream created: 4129bca5-2129-4b64-9bf1-cb7753e75e59 by user 68cd5254af59678b654e5762","timestamp":"2025-09-19T12:53:40.667Z"}
+{"level":"info","message":"Stream created: 4129bca5-2129-4b64-9bf1-cb7753e75e59 by user 68cd5254af59678b654e5762","timestamp":"2025-09-19T12:53:40.667Z"}
+{"level":"info","message":"User 68cd5254af59678b654e5762 joined stream 4129bca5-2129-4b64-9bf1-cb7753e75e59","timestamp":"2025-09-19T12:53:40.683Z"}
+{"_message":"ChatMessage validation failed","errors":{"deletedReason":{"kind":"enum","message":"`null` is not a valid enum value for path `deletedReason`.","name":"ValidatorError","path":"deletedReason","properties":{"enumValues":["spam","inappropriate","harassment","off-topic","other"],"message":"`null` is not a valid enum value for path `deletedReason`.","path":"deletedReason","type":"enum","value":null},"value":null}},"level":"warn","message":"Chat message database save failed: ChatMessage validation failed: deletedReason: `null` is not a valid enum value for path `deletedReason`.","stack":"ValidationError: ChatMessage validation failed: deletedReason: `null` is not a valid enum value for path `deletedReason`.\n    at Document.invalidate (/home/pps024/Desktop/ils/backend/node_modules/mongoose/lib/document.js:3219:32)\n    at /home/pps024/Desktop/ils/backend/node_modules/mongoose/lib/document.js:3012:17\n    at /home/pps024/Desktop/ils/backend/node_modules/mongoose/lib/schematype.js:1368:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)","timestamp":"2025-09-19T12:53:40.699Z"}
+{"level":"error","message":"Error publishing chat message: data is not defined","stack":"ReferenceError: data is not defined\n    at MessageQueue.publishChatMessage (/home/pps024/Desktop/ils/backend/src/services/MessageQueue.js:158:29)\n    at ChatService.sendMessage (/home/pps024/Desktop/ils/backend/src/services/ChatService.js:61:31)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /home/pps024/Desktop/ils/backend/src/routes/routes.chat.js:153:29","timestamp":"2025-09-19T12:53:40.700Z"}
+{"classId":60,"code":404,"level":"error","message":"RabbitMQ connection error: Channel closed by server: 404 (NOT-FOUND) with message \"NOT_FOUND - no exchange 'analytics.events' in vhost '/'\"","methodId":40,"stack":"Error: Channel closed by server: 404 (NOT-FOUND) with message \"NOT_FOUND - no exchange 'analytics.events' in vhost '/'\"\n    at Channel.accept (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/channel.js:324:19)\n    at Connection.mainAccept [as accept] (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/connection.js:579:33)\n    at Socket.go (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/connection.js:431:16)\n    at Socket.emit (node:events:518:28)\n    at emitReadable_ (node:internal/streams/readable:834:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)","timestamp":"2025-09-19T12:53:40.711Z"}
+{"level":"info","message":"Attempting RabbitMQ reconnection 1/10","timestamp":"2025-09-19T12:53:40.711Z"}
+{"level":"warn","message":"RabbitMQ connection closed","timestamp":"2025-09-19T12:53:40.712Z"}
+{"level":"info","message":"Attempting RabbitMQ reconnection 2/10","timestamp":"2025-09-19T12:53:40.712Z"}
+{"level":"error","message":"Error publishing stream event Channel closed","stack":"IllegalOperationError: Channel closed\n    at Channel.<anonymous> (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/channel.js:373:11)\n    at Channel.publish (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/channel_model.js:158:17)\n    at MessageQueue.publishStreamEvent (/home/pps024/Desktop/ils/backend/src/services/MessageQueue.js:138:32)\n    at StreamService.endStream (/home/pps024/Desktop/ils/backend/src/services/StreamService.js:253:37)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /home/pps024/Desktop/ils/backend/src/routes/routes.stream.js:331:22","stackAtStateChange":"Stack capture: Socket error\n    at Connection.onSocketError (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/connection.js:307:15)\n    at Connection.emit (node:events:518:28)\n    at Socket.go (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/connection.js:434:14)\n    at Socket.emit (node:events:518:28)\n    at emitReadable_ (node:internal/streams/readable:834:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)","timestamp":"2025-09-19T12:53:40.730Z"}
+{"level":"error","message":"Error publishing analytics event: Channel closed","stack":"IllegalOperationError: Channel closed\n    at Channel.<anonymous> (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/channel.js:373:11)\n    at Channel.publish (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/channel_model.js:158:17)\n    at MessageQueue.publishAnalyticsEvent (/home/pps024/Desktop/ils/backend/src/services/MessageQueue.js:192:32)\n    at StreamService.endStream (/home/pps024/Desktop/ils/backend/src/services/StreamService.js:263:37)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /home/pps024/Desktop/ils/backend/src/routes/routes.stream.js:331:22","stackAtStateChange":"Stack capture: Socket error\n    at Connection.onSocketError (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/connection.js:307:15)\n    at Connection.emit (node:events:518:28)\n    at Socket.go (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/connection.js:434:14)\n    at Socket.emit (node:events:518:28)\n    at emitReadable_ (node:internal/streams/readable:834:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)","timestamp":"2025-09-19T12:53:40.730Z"}
+{"level":"info","message":"Stream ended: 4129bca5-2129-4b64-9bf1-cb7753e75e59 by user 68cd5254af59678b654e5762","timestamp":"2025-09-19T12:53:40.731Z"}
+{"level":"info","message":"Stream ended: 4129bca5-2129-4b64-9bf1-cb7753e75e59 by user 68cd5254af59678b654e5762","timestamp":"2025-09-19T12:53:40.731Z"}
+{"level":"info","message":"RabbitMQ connected","timestamp":"2025-09-19T12:53:45.792Z"}
+{"level":"info","message":"RabbitMQ connected","timestamp":"2025-09-19T12:53:50.784Z"}
+{"level":"info","message":"User testuser1758286458985 registered successfully","timestamp":"2025-09-19T12:54:19.201Z"}
+{"level":"info","message":"User testuser1758286458985 logged in successfully","timestamp":"2025-09-19T12:54:19.406Z"}
+{"level":"info","message":"Client connected: bisFO4BYRYhRvEgKAAAB, User: 68cd527baf59678b654e577a","timestamp":"2025-09-19T12:54:19.429Z"}
+{"level":"info","message":"Room created: bdaec5d1-6a27-4ca1-b419-2f4fec821a25 on worker 1","timestamp":"2025-09-19T12:54:19.436Z"}
+{"_message":"Stream validation failed","errors":{"category":{"kind":"required","message":"Path `category` is required.","name":"ValidatorError","path":"category","properties":{"message":"Path `category` is required.","path":"category","type":"required","value":""},"value":""}},"level":"warn","message":"Database save failed, continuing with cache: Stream validation failed: category: Path `category` is required.","stack":"ValidationError: Stream validation failed: category: Path `category` is required.\n    at Document.invalidate (/home/pps024/Desktop/ils/backend/node_modules/mongoose/lib/document.js:3219:32)\n    at /home/pps024/Desktop/ils/backend/node_modules/mongoose/lib/document.js:3012:17\n    at /home/pps024/Desktop/ils/backend/node_modules/mongoose/lib/schematype.js:1368:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)","timestamp":"2025-09-19T12:54:19.438Z"}
+{"level":"info","message":"Stream created: bdaec5d1-6a27-4ca1-b419-2f4fec821a25 by user 68cd527baf59678b654e577a","timestamp":"2025-09-19T12:54:19.439Z"}
+{"level":"info","message":"Stream created: bdaec5d1-6a27-4ca1-b419-2f4fec821a25 by user: 68cd527baf59678b654e577a","timestamp":"2025-09-19T12:54:19.439Z"}
+{"level":"info","message":"User 68cd527baf59678b654e577a joined stream bdaec5d1-6a27-4ca1-b419-2f4fec821a25","timestamp":"2025-09-19T12:54:19.443Z"}
+{"level":"info","message":"User 68cd527baf59678b654e577a joined stream bdaec5d1-6a27-4ca1-b419-2f4fec821a25","timestamp":"2025-09-19T12:54:19.444Z"}
+{"classId":60,"code":404,"level":"error","message":"RabbitMQ connection error: Channel closed by server: 404 (NOT-FOUND) with message \"NOT_FOUND - no exchange 'analytics.events' in vhost '/'\"","methodId":40,"stack":"Error: Channel closed by server: 404 (NOT-FOUND) with message \"NOT_FOUND - no exchange 'analytics.events' in vhost '/'\"\n    at Channel.accept (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/channel.js:324:19)\n    at Connection.mainAccept [as accept] (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/connection.js:579:33)\n    at Socket.go (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/connection.js:431:16)\n    at Socket.emit (node:events:518:28)\n    at emitReadable_ (node:internal/streams/readable:834:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)","timestamp":"2025-09-19T12:54:19.481Z"}
+{"level":"info","message":"Attempting RabbitMQ reconnection 3/10","timestamp":"2025-09-19T12:54:19.481Z"}
+{"level":"warn","message":"RabbitMQ connection closed","timestamp":"2025-09-19T12:54:19.482Z"}
+{"level":"info","message":"Attempting RabbitMQ reconnection 4/10","timestamp":"2025-09-19T12:54:19.482Z"}
+{"level":"info","message":"Client disconnecting: bisFO4BYRYhRvEgKAAAB","timestamp":"2025-09-19T12:54:21.435Z"}
+{"level":"info","message":"Client disconnected: bisFO4BYRYhRvEgKAAAB, Reason: client namespace disconnect","timestamp":"2025-09-19T12:54:21.436Z"}
+{"level":"error","message":"Error publishing user presence: Channel closed","stack":"IllegalOperationError: Channel closed\n    at Channel.<anonymous> (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/channel.js:373:11)\n    at Channel.publish (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/channel_model.js:158:17)\n    at MessageQueue.publishUserPresence (/home/pps024/Desktop/ils/backend/src/services/MessageQueue.js:223:32)\n    at StreamService.handleUserDisconnect (/home/pps024/Desktop/ils/backend/src/services/StreamService.js:292:37)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Socket.<anonymous> (/home/pps024/Desktop/ils/backend/server.js:345:21)","stackAtStateChange":"Stack capture: Socket error\n    at Connection.onSocketError (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/connection.js:307:15)\n    at Connection.emit (node:events:518:28)\n    at Socket.go (/home/pps024/Desktop/ils/backend/node_modules/amqplib/lib/connection.js:434:14)\n    at Socket.emit (node:events:518:28)\n    at emitReadable_ (node:internal/streams/readable:834:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)","timestamp":"2025-09-19T12:54:21.438Z"}
+{"level":"info","message":"RabbitMQ connected","timestamp":"2025-09-19T12:54:34.543Z"}
+{"level":"info","message":"RabbitMQ connected","timestamp":"2025-09-19T12:54:39.534Z"}

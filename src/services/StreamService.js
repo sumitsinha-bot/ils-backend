@@ -32,7 +32,7 @@ class StreamService {
 
             await this.mediaService.createRoom(streamId);
 
-            await this.cacheService.createStream(streamId, stream)
+            await this.cacheService.updateStream(streamId, stream)
 
             // store in db
             try {
@@ -60,7 +60,7 @@ class StreamService {
                     const streamDoc = await Stream.findOne({ id: streamId });
                     if (streamDoc) {
                         stream = streamDoc.toObject();
-                        await this.cacheService.createStream(streamId, stream);
+                        await this.cacheService.updateStream(streamId, stream);
                     }
                 } catch (dbError) {
                     this.logger.warn('Database query failed:', dbError)
@@ -310,7 +310,7 @@ class StreamService {
                     const streamDoc = await Stream.findOne({ id: streamId });
                     if (streamDoc) {
                         stream = streamDoc.toObject();
-                        await this.cacheService.createStream(streamId, stream);
+                        await this.cacheService.updateStream(streamId, stream);
                     }
                 } catch (dbError) {
                     this.logger.warn('Database query failed:', dbError)
@@ -383,6 +383,48 @@ class StreamService {
             return enhancedStreams;
         } catch (error) {
             this.logger.error('Error searching streams:', error);
+            return [];
+        }
+    }
+
+    async getUserActiveStreams(userId) {
+        try {
+            return await Stream.find({ userId, isLive: true });
+        } catch (error) {
+            this.logger.error('Error getting user active streams:', error);
+            return [];
+        }
+    }
+
+    async updateStream(streamId, updateData) {
+        try {
+            await this.cacheService.updateStream(streamId, updateData);
+            await Stream.updateOne({ id: streamId }, updateData);
+            return await this.getStreamInfo(streamId);
+        } catch (error) {
+            this.logger.error('Error updating stream:', error);
+            throw error;
+        }
+    }
+
+    async getDetailedStats(streamId) {
+        try {
+            return await this.cacheService.getStreamStats(streamId);
+        } catch (error) {
+            this.logger.error('Error getting detailed stats:', error);
+            return {};
+        }
+    }
+
+    async getUserStreams(userId, options = {}) {
+        try {
+            const query = { userId };
+            if (!options.includeEnded) {
+                query.isLive = true;
+            }
+            return await Stream.find(query).limit(options.limit || 20).sort({ createdAt: -1 });
+        } catch (error) {
+            this.logger.error('Error getting user streams:', error);
             return [];
         }
     }
