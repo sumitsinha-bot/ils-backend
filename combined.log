@@ -1,0 +1,4 @@
+{"level":"info","message":"Initializing services...","timestamp":"2025-09-19T07:33:14.131Z"}
+{"level":"info","message":"Database connected","timestamp":"2025-09-19T07:33:14.161Z"}
+{"level":"info","message":"All services initialized successfully","timestamp":"2025-09-19T07:33:14.161Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-09-19T07:33:14.163Z"}
