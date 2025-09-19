@@ -32,6 +32,7 @@ class MessageQueue {
                 this.handleReconnect();
             });
 
+            this.channel = await this.connection.createChannel();
             await this.setupExchanges();
 
             await this.setUpQueues();
@@ -67,13 +68,13 @@ class MessageQueue {
 
     async setUpQueues() {
         //stream lifecycle queues
-        await this.channel.assetQueue('stream.started', {
+        await this.channel.assertQueue('stream.started', {
             durable: true,
             messageTtl: 86400000,
             maxLength: 1000
         })
 
-        await this.channel.assetQueue('stream.ended', {
+        await this.channel.assertQueue('stream.ended', {
             durable: true,
             messageTtl: 86400000,
             maxLength: 1000
