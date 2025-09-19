@@ -2,6 +2,7 @@
 const express = require('express');
 const { body, param, query, validationResult } = require('express-validator');
 const rateLimit = require('express-rate-limit');
+const AuthMiddleWare = require('../middleware/middleware.auth');
 
 module.exports = (chatService, logger) => {
     const router = express.Router();
@@ -90,7 +91,7 @@ module.exports = (chatService, logger) => {
 
             // Filter out deleted messages unless user is moderator/admin
             const filteredMessages = messages.map(message => {
-                if (message.deleted && req.user.role !== 'admin' && req.user.role !== 'moderator') {
+                if (message.deleted && (!req.user || (req.user.role !== 'admin' && req.user.role !== 'moderator'))) {
                     return {
                         ...message.getSafeMessage(),
                         content: '[Message deleted]'
@@ -273,10 +274,11 @@ module.exports = (chatService, logger) => {
         }
     });
 
-    // POST /api/chat/:streamId/:messageId/moderate - Moderate a message
-    router.post('/:streamId/:messageId/moderate',
-        AuthMiddleware.requireRole(['moderator', 'admin']),
-        moderationValidation,
+
+// POST /api/chat/:streamId/:messageId/moderate - Moderate a message
+router.post('/:streamId/:messageId/moderate',
+    AuthMiddleWare.requiredRoles(['moderator', 'admin']),
+    moderationValidation,
         async (req, res) => {
             try {
                 const errors = validationResult(req);

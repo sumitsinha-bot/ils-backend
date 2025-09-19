@@ -1,7 +1,9 @@
 const express = require('express');
 const { body, param, query, validationResult } = require('express-validator');
 const rateLimit = require('express-rate-limit');
-const AuthMiddleWare = require('../middleware/middleware.auth');
+const express = require('express');
+const { body, param, query, validationResult } = require('express-validator');
+const rateLimit = require('express-rate-limit');
 
 module.exports = (streamService, logger) => {
   const router = express.Router();

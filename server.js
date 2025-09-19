@@ -160,7 +160,7 @@ io.on('connection', (socket) => {
 
             const stream = await streamService.createStream(socket.userId, data)
             socket.join(`room:${stream.id}`)
-            socket.emit('socket-created', stream);
+            socket.emit('stream-created', stream);
 
             logger.info(`Stream created: ${stream.id} by user: ${socket.userId}`);
             //   metricsService.incrementActiveStreams();
@@ -179,7 +179,7 @@ io.on('connection', (socket) => {
             }
 
             const streamData = await streamService.joinStream(socket.userId, data.streamId);
-            socket.join(`room: ${data.streamId}`);
+            socket.join(`room:${data.streamId}`);
 
             socket.to(`room:${data.streamId}`).emit('viewer-joined', {
                 userId: socket.userId,

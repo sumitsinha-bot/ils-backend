@@ -196,7 +196,7 @@ class CacheService {
         }
     }
 
-    async removeViewers(streamId, userId) {
+    async removeViewer(streamId, userId) {
         try {
             await this.client.srem(`stream:${streamId}:viewers`, userId);
             const count = await this.client.scard(`stream:${streamId}:viewers`);
@@ -249,7 +249,7 @@ class CacheService {
             await pipeline.exec();
             this.logger.debug(`Chat message added to stream: ${streamId}`)
         } catch (error) {
-            this.logger.debug(`Error adding chat message`, error);
+            this.logger.error(`Error adding chat message`, error);
             throw error;
 
         }
@@ -323,7 +323,10 @@ class CacheService {
             this.subscriber.on('pmessage', (pattern, channel, message) => {
                 try {
                     const data = JSON.parse(message);
-                    callback(channel, data);
+                    const callbacks = this.patternCallbacks.get(pattern);
+                    if(callbacks){
+                        callbacks.forEach(cb => cb(data));
+                    }
                 } catch (error) {
                     this.logger.error('Error parsing pub/sub message:', error);
                 }
