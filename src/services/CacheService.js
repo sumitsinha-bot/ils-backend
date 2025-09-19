@@ -316,33 +316,30 @@ class CacheService {
         }
     }
 
-    // pub/sub
     async subscribe(pattern, callback) {
         try {
             await this.subscriber.psubscribe(pattern);
             this.subscriber.on('pmessage', (pattern, channel, message) => {
                 try {
                     const data = JSON.parse(message);
-                    const callbacks = this.patternCallbacks.get(pattern);
-                    if(callbacks){
-                        callbacks.forEach(cb => cb(data));
-                    }
+                    callback(channel, data);
                 } catch (error) {
                     this.logger.error('Error parsing pub/sub message:', error);
                 }
             });
-            this.logger.debug(`Subscribed to pattern: ${pattern}`)
+
+            this.logger.debug(`Subscribed to pattern: ${pattern}`);
         } catch (error) {
-            this.logger.error('Error subscribing to pattern:', error);
+            this.logger.error('Error subscribing:', error);
         }
     }
 
     async publish(channel, data) {
         try {
             await this.publisher.publish(channel, JSON.stringify(data));
-            this.logger.debug(`Published to channel: ${channel}`)
+            this.logger.debug(`Published to channel: ${channel}`);
         } catch (error) {
-            this.logger.error('Error publishing to channel:', error);
+            this.logger.error('Error publishing:', error);
         }
     }
 

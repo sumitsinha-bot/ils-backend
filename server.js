@@ -1,4 +1,4 @@
-require('dotenv').config;
+require('dotenv').config();
 const express = require('express')
 const http = require('http');
 const socketIo = require('socket.io');
@@ -226,7 +226,7 @@ io.on('connection', (socket) => {
             callback(transport)
         } catch (error) {
             logger.error('Create transport error', error)
-            callback({ error: message });
+            callback({ error: error.message });
         }
     })
 
