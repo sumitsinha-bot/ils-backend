@@ -78,7 +78,7 @@ const chatMessageSchema = new mongoose.Schema({
     },
     deletedReason: {
         type: String,
-        enum: ['spam', 'inappropriate', 'harassment', 'off-topic', 'other'],
+        enum: ['spam', 'inappropriate', 'harassment', 'off-topic', 'other', null],
         default: null
     },
     moderation: {

@@ -15,6 +15,7 @@ const CacheService = require('./src/services/CacheService');
 const StreamService = require('./src/services/StreamService');
 const ChatService = require('./src/services/ChatService');
 const AuthMiddleWare = require('./src/middleware/middleware.auth');
+const { specs, swaggerUi } = require('./swagger');
 
 //metrics - later
 
@@ -88,6 +89,37 @@ const generateLimiter = rateLimit({
 // app.use('/api', generateLimiter);
 // app.use('/api/auth', authLimiter);
 
+// Swagger Documentation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
+    explorer: true,
+    customCss: '.swagger-ui .topbar { display: none }',
+    customSiteTitle: 'ILS API Documentation'
+}));
+
+/**
+ * @swagger
+ * /health:
+ *   get:
+ *     summary: Health check endpoint
+ *     tags: [Health]
+ *     responses:
+ *       200:
+ *         description: Server is healthy
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: ok
+ *                 timestamp:
+ *                   type: string
+ *                   format: date-time
+ *                 uptime:
+ *                   type: number
+ *                   example: 3600
+ */
 app.get('/health', (req, res) => {
     res.json({
         status: 'ok',
