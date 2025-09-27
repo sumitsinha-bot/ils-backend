@@ -40,7 +40,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
     cors: {
-        origin: process.env.CLIENT_URL || "http://localhost:3000",
+        origin: true,
         methods: ['GET', 'POST']
     },
     transports: ['websocket', 'polling'],
@@ -49,28 +49,15 @@ const io = socketIo(server, {
 })
 
 
-app.use(helmet({
-    contentSecurityPolicy: {
-        directives: {
-            defaultSrc: ["'self'"],
-            scriptSrc: ["'self'", "'unsafe-inline'"],
-            styleSrc: ["'self'", "'unsafe-inline'"],
-            imgSrc: ["'self'", "data:", "https:"],
-            connectSrc: ["'self'", "wss:", "ws:"],
-            fontSrc: ["'self'"],
-            objectSrc: ["'none'"],
-            mediaSrc: ["'self'"],
-            frameSrc: ["'none'"]
-        }
-    }
-}));
-
-app.use(cors({
-    origin: process.env.CLIENT_URL || "http://localhost:3000",
-    credentials: true
-}))
+if (process.env.NODE_ENV !== 'test') {
+    app.use(helmet());
+}
+app.use(cors());
 
 app.use(express.json({ limit: "10mb" }));
+
+// Serve test frontend
+app.use('/test', express.static('test-frontend'));
 
 // Rate Limiter
 const generateLimiter = rateLimit({
@@ -146,11 +133,12 @@ async function initializeServices() {
         mediaService = new MediaService(logger);
         await mediaService.initialize();
 
+        // Temporarily disabled for streaming testing
         messageQueue = new MessageQueue(logger);
-        await messageQueue.connect();
+        // await messageQueue.connect();
 
         cacheService = new CacheService(logger);
-        await cacheService.connect();
+        // await cacheService.connect();
 
         // metricsService = new MetricsService();
         streamService = new StreamService(mediaService, messageQueue, cacheService, logger);
@@ -216,6 +204,31 @@ io.on('connection', (socket) => {
 
             const streamData = await streamService.joinStream(socket.userId, data.streamId);
             socket.join(`room:${data.streamId}`);
+
+            // Get existing producers in the room and notify the new viewer
+            const existingProducers = [];
+            const room = mediaService.rooms.get(data.streamId);
+            if (room) {
+                for (const [participantId, participant] of room.participants) {
+                    if (participantId !== socket.userId) {
+                        for (const [producerId, producer] of participant.producers) {
+                            existingProducers.push({
+                                id: producer.id,
+                                kind: producer.kind,
+                                userId: participantId
+                            });
+                            logger.info(`Found existing producer ${producer.id} (${producer.kind}) from ${participantId}`);
+                        }
+                    }
+                }
+            }
+            
+            if (existingProducers.length > 0) {
+                socket.emit('existing-producers', existingProducers);
+                logger.info(`Sent ${existingProducers.length} existing producers to ${socket.userId}`);
+            } else {
+                logger.info(`No existing producers found for room ${data.streamId}`);
+            }
 
             socket.to(`room:${data.streamId}`).emit('viewer-joined', {
                 userId: socket.userId,
@@ -336,11 +349,49 @@ io.on('connection', (socket) => {
     socket.on('resume-consumer', async (data, callback) => {
         try {
             await streamService.resumeConsumer(data.roomId, socket.userId, data.consumerId);
-            callback({ success: true })
+            if (callback) callback({ success: true })
         } catch (error) {
             logger.error('Resume consumer error', error)
-            callback({ error: error.message })
+            if (callback) callback({ error: error.message })
         }
+    })
+
+    socket.on('get-producers', async (data, callback) => {
+        try {
+            if (!data?.roomId) {
+                logger.warn('get-producers called without roomId');
+                if (typeof callback === 'function') {
+                    callback([]);
+                }
+                return;
+            }
+
+            const producers = [];
+            const room = mediaService.rooms.get(data.roomId);
+            if (room) {
+                for (const [participantId, participant] of room.participants) {
+                    if (participantId !== socket.userId) {
+                        for (const [producerId, producer] of participant.producers) {
+                            producers.push({
+                                id: producer.id,
+                                kind: producer.kind,
+                                userId: participantId
+                            });
+                        }
+                    }
+                }
+            }
+            logger.info(`Found ${producers.length} existing producers for room ${data.roomId}`);
+            if (typeof callback === 'function') {
+                callback(producers);
+            }
+        } catch (error) {
+            logger.error('Get producers error', error);
+            if (typeof callback === 'function') {
+                callback([]);
+            }
+        }
+    });
     })
 
     socket.on('send-message', async (data, callback) => {
@@ -407,8 +458,8 @@ process.on('SIGINT', async () => {
 
     // Close services
     await mediaService?.cleanup();
-    await messageQueue?.close();
-    await cacheService?.disconnect();
+    // await messageQueue?.close();
+    // await cacheService?.disconnect();
     await mongoose.disconnect();
 
     server.close(() => {

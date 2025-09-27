@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILS Streaming Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        video { width: 300px; height: 200px; border: 1px solid #ccc; margin: 10px; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 4px; }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .info { background-color: #d1ecf1; color: #0c5460; }
+        input { padding: 8px; margin: 5px; width: 200px; }
+        .controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ILS Streaming Test</h1>
+        
+        <div class="section">
+            <h2>Authentication</h2>
+            <div class="controls">
+                <input type="text" id="username" placeholder="Username" value="testuser">
+                <input type="email" id="email" placeholder="Email" value="testuser@example.com">
+                <input type="password" id="password" placeholder="Password" value="testpass">
+                <button onclick="login()">Login</button>
+                <button onclick="register()">Register</button>
+            </div>
+            <div id="auth-status" class="status info">Not authenticated</div>
+        </div>
+
+        <div class="section">
+            <h2>Streamer (Broadcaster)</h2>
+            <div class="controls">
+                <input type="text" id="stream-title" placeholder="Stream Title" value="Test Stream">
+                <button onclick="startStream()">Start Stream</button>
+                <button onclick="stopStream()">Stop Stream</button>
+                <button id="toggle-video" onclick="toggleVideo()" disabled>📹 Video Off</button>
+                
+                <button id="toggle-audio" onclick="toggleAudio()" disabled>🎤 Mic Off</button>
+                <input type="text" id="stream-id" placeholder="Stream ID">
+            </div>
+            <video id="local-video" autoplay muted></video>
+            <div id="stream-status" class="status info">Stream not started</div>
+
+        </div>
+
+    
+        <div class="section">
+            <h2>Debug Info</h2>
+            <div id="debug-info" style="font-family: monospace; font-size: 12px; background: #f5f5f5; padding: 10px; height: 200px; overflow-y: auto;"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="bundle.js"></script>
+</body>
+</html>

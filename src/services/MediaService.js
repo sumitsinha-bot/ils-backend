@@ -67,57 +67,31 @@ class MediaService {
 
     getOptimizedCodecs() {
         return [
-            // Opus - Best audio codec
             {
                 kind: 'audio',
                 mimeType: 'audio/opus',
+                preferredPayloadType: 111,
                 clockRate: 48000,
                 channels: 2,
                 parameters: {
                     'sprop-stereo': 1,
-                    'useinbandfec': 1,
-                    'maxaveragebitrate': 128000,
-                    'maxplaybackrate': 48000,
-                    'ptime': 20,
-                    'minptime': 10,
-                    'maxptime': 60
+                    'useinbandfec': 1
                 }
             },
-            // VP8 - Universal support
             {
                 kind: 'video',
                 mimeType: 'video/VP8',
-                clockRate: 90000,
-                parameters: {
-                    'x-google-start-bitrate': 800,
-                    'x-google-max-bitrate': 2000,
-                    'x-google-min-bitrate': 200
-                }
+                preferredPayloadType: 96,
+                clockRate: 90000
             },
-            // VP9 - Better compression
-            {
-                kind: 'video',
-                mimeType: 'video/VP9',
-                clockRate: 90000,
-                parameters: {
-                    'profile-id': 2,
-                    'x-google-start-bitrate': 800,
-                    'x-google-max-bitrate': 2000,
-                    'x-google-min-bitrate': 200
-                }
-            },
-            // H.264 - Mobile compatibility
             {
                 kind: 'video',
                 mimeType: 'video/h264',
+                preferredPayloadType: 102,
                 clockRate: 90000,
                 parameters: {
                     'packetization-mode': 1,
-                    'profile-level-id': '42e01f',
-                    'level-asymmetry-allowed': 1,
-                    'x-google-start-bitrate': 800,
-                    'x-google-max-bitrate': 2000,
-                    'x-google-min-bitrate': 200
+                    'profile-level-id': '42e01f'
                 }
             }
         ];

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILS Stream Viewer</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        video { width: 100%; max-width: 600px; height: 400px; border: 1px solid #ccc; background: #000; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 4px; }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .info { background-color: #d1ecf1; color: #0c5460; }
+        input { padding: 8px; margin: 5px; width: 300px; }
+        .controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ILS Stream Viewer</h1>
+        
+        <div class="section">
+            <h2>Authentication</h2>
+            <div class="controls">
+                <input type="text" id="username" placeholder="Username" value="viewer1">
+                <input type="email" id="email" placeholder="Email" value="viewer1@example.com">
+                <input type="password" id="password" placeholder="Password" value="testpass">
+                <button onclick="login()">Login</button>
+                <button onclick="register()">Register</button>
+            </div>
+            <div id="auth-status" class="status info">Not authenticated</div>
+        </div>
+
+        <div class="section">
+            <h2>Join Stream</h2>
+            <div class="controls">
+                <input type="text" id="stream-id" placeholder="Enter Stream ID">
+                <button onclick="joinStream()">Join Stream</button>
+                <button onclick="leaveStream()">Leave Stream</button>
+                <button id="toggle-remote-audio" onclick="toggleRemoteAudio()" disabled>🔊 Mute Audio</button>
+                <button id="mute-webcam" onclick="muteWebcam()" disabled>📷 Mute Webcam</button>
+            </div>
+            <!-- Video starts visible but empty -->
+            <video id="remote-video" autoplay playsinline style="border: 3px solid red;"></video>
+            <canvas id="video-canvas" width="640" height="480" style="display: none; border: 1px solid #ccc;"></canvas>
+            <div id="no-stream" style="padding: 20px; text-align: center; border: 1px dashed #ccc; color: #666;">No stream connected</div>
+            <div id="viewer-status" class="status info">Not viewing any stream</div>
+            <div id="stream-info" style="background: #e7f3ff; padding: 10px; margin: 10px 0; border-radius: 4px; font-size: 14px;">
+                📺 <strong>Video Status:</strong> <span id="video-status" style="color: red;">No video</span><br>
+                🔊 <strong>Audio Status:</strong> <span id="audio-status" style="color: red;">No audio</span><br>
+                📊 <strong>Connection:</strong> <span id="connection-status" style="color: red;">Disconnected</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Debug Info</h2>
+            <div id="debug-info" style="font-family: monospace; font-size: 12px; background: #f5f5f5; padding: 10px; height: 200px; overflow-y: auto;"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="viewer-bundle.js"></script>
+
+    <script>
+      // Attach remote stream to <video>
+      function attachStream(videoTrack, audioTrack) {
+        const remoteStream = new MediaStream();
+        if (videoTrack) remoteStream.addTrack(videoTrack);
+        if (audioTrack) remoteStream.addTrack(audioTrack);
+
+        const videoEl = document.getElementById("remote-video");
+        videoEl.srcObject = remoteStream;
+
+        // Show video and hide "no stream"
+        videoEl.style.display = "block";
+        document.getElementById("no-stream").style.display = "none";
+
+        videoEl.onloadedmetadata = () => {
+          videoEl.play().catch(err => {
+            console.warn("Autoplay blocked, waiting for user gesture", err);
+          });
+        };
+
+        // Enable mute/unmute buttons
+        document.getElementById("toggle-remote-audio").disabled = false;
+        if (videoTrack) {
+          document.getElementById("mute-webcam").disabled = false;
+        }
+      }
+
+      // Mute/unmute audio handler
+      function toggleRemoteAudio() {
+        const videoEl = document.getElementById("remote-video");
+        const btn = document.getElementById("toggle-remote-audio");
+
+        videoEl.muted = !videoEl.muted;
+        btn.textContent = videoEl.muted ? "🔇 Unmute Audio" : "🔊 Mute Audio";
+      }
+
+      // Mute/unmute webcam handler
+      function muteWebcam() {
+        const videoEl = document.getElementById("remote-video");
+        const btn = document.getElementById("mute-webcam");
+        
+        if (videoEl && videoEl.srcObject) {
+          const stream = videoEl.srcObject;
+          const videoTracks = stream.getVideoTracks();
+          
+          if (videoTracks.length > 0) {
+            const videoTrack = videoTracks[0];
+            videoTrack.enabled = !videoTrack.enabled;
+            btn.textContent = videoTrack.enabled ? "📷 Mute Webcam" : "📷 Unmute Webcam";
+            
+            // Optional: Show/hide video element or show placeholder
+            if (!videoTrack.enabled) {
+              videoEl.style.backgroundColor = "#333";
+            } else {
+              videoEl.style.backgroundColor = "#000";
+            }
+          }
+        }
+      }
+
+      // For quick testing only: fake a webcam stream after 2s
+      // Remove this in production, your mediasoup consumer should call attachStream()
+    </script>
+</body>
+</html>

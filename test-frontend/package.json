@@ -1,0 +1,21 @@
+{
+  "name": "ils-streaming-test",
+  "version": "1.0.0",
+  "description": "Simple frontend test for ILS streaming",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 8080 -c-1 -a localhost",
+    "build": "webpack --mode development",
+    "build-viewer": "webpack --config webpack.viewer.config.js --mode development",
+    "build-all": "npm run build && npm run build-viewer",
+    "dev": "npm run build-all && npm start"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "mediasoup-client": "^3.16.7"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

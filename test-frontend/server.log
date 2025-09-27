@@ -1,0 +1,90 @@
+Starting up http-server, serving .
+
+http-server version: 14.1.1
+
+http-server settings: 
+CORS: disabled
+Cache: -1 seconds
+Connection Timeout: 120 seconds
+Directory Listings: visible
+AutoIndex: visible
+Serve GZIP Files: false
+Serve Brotli Files: false
+Default File Extension: none
+
+Available on:
+  http://127.0.0.1:8080
+  http://192.168.1.4:8080
+Hit CTRL-C to stop the server
+
+[2025-09-26T00:00:31.986Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+(node:3448) [DEP0066] DeprecationWarning: OutgoingMessage.prototype._headers is deprecated
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[2025-09-26T00:00:32.004Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:00:32.007Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:00:32.010Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:02:17.294Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:02:17.313Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:02:17.314Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:02:17.316Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:02:18.510Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:02:18.526Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:02:18.527Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:02:18.528Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:03:13.514Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:03:13.526Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:03:13.527Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:03:13.528Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:03:14.323Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:03:14.333Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:03:14.334Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:03:14.337Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:03:27.343Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:03:27.355Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:03:27.358Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:03:27.360Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:03:27.500Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:03:27.507Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:03:27.508Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:03:27.508Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:04:32.093Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:04:32.107Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:04:32.127Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:04:32.127Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:04:48.071Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:04:48.082Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:04:48.083Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:04:48.085Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:04:54.591Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:04:54.600Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:04:54.601Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:04:54.601Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:05:46.197Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:05:46.211Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:05:46.226Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:05:46.227Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:06:19.358Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:19.372Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:19.379Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:19.380Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:06:19.569Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:19.576Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:19.577Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:19.577Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:06:19.827Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:19.835Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:19.836Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:06:19.836Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:20.118Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:20.127Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:20.128Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:20.129Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:06:57.642Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:57.656Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:57.667Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:57.667Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+[2025-09-26T00:06:58.898Z]  "GET /" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:58.907Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:58.908Z]  "GET /app.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[2025-09-26T00:06:58.908Z]  "GET /.well-known/appspecific/com.chrome.devtools.json" Error (404): "Not found"
+http-server stopped.
