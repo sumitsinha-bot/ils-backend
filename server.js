@@ -358,14 +358,6 @@ io.on('connection', (socket) => {
 
     socket.on('get-producers', async (data, callback) => {
         try {
-            if (!data?.roomId) {
-                logger.warn('get-producers called without roomId');
-                if (typeof callback === 'function') {
-                    callback([]);
-                }
-                return;
-            }
-
             const producers = [];
             const room = mediaService.rooms.get(data.roomId);
             if (room) {
@@ -382,16 +374,11 @@ io.on('connection', (socket) => {
                 }
             }
             logger.info(`Found ${producers.length} existing producers for room ${data.roomId}`);
-            if (typeof callback === 'function') {
-                callback(producers);
-            }
+            callback(producers);
         } catch (error) {
             logger.error('Get producers error', error);
-            if (typeof callback === 'function') {
-                callback([]);
-            }
+            callback([]);
         }
-    });
     })
 
     socket.on('send-message', async (data, callback) => {
